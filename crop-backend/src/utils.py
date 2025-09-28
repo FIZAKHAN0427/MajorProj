@@ -114,7 +114,7 @@ def validate_input_data(data):
     if 'rainfall' in data and data['rainfall'] < 0:
         errors.append("Rainfall should be non-negative")
     
-    if 'ndvi' in data and (data['ndvi'] < -1 or data['ndvi'] > 1):
+    if 'ndvi' in data and data['ndvi'] is not None and (data['ndvi'] < -1 or data['ndvi'] > 1):
         errors.append("NDVI should be between -1 and 1")
     
     return errors
