@@ -1,0 +1,100 @@
+You are an expert backend engineer. Generate a **complete crop recommendation backend project** with the following requirements, all in one go:
+
+---
+
+### 1. Directory Structure
+- crop-backend/
+    ├── data/
+    ├── notebooks/
+    ├── src/
+    │   ├── __init__.py
+    │   ├── config.py
+    │   ├── database.py
+    │   ├── preprocessing.py
+    │   ├── model.py
+    │   ├── sentinel.py
+    │   ├── utils.py
+    │   └── api/
+    │       ├── __init__.py
+    │       ├── main.py
+    │       ├── routes.py
+    │       └── schemas.py
+    ├── models/
+    ├── logs/
+    ├── scripts/
+    │   ├── fetch_sentinel_data.py
+    │   └── retrain_model.py
+    ├── tests/
+    │   ├── test_api.py
+    │   └── test_model.py
+    ├── requirements.txt
+    ├── .env
+    ├── Makefile
+    └── README.md
+
+---
+
+### 2. Datasets
+- Kaggle Dataset 1: https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset  
+- Kaggle Dataset 2: https://www.kaggle.com/code/prasadkevin/crops-prediction-indian-dataset/data  
+- Sentinel Data (Google Earth Engine): https://developers.google.com/earth-engine/datasets/catalog/sentinel
+
+---
+
+### 3. Dependencies (`requirements.txt`)
+- pandas, numpy, scikit-learn, fastapi, uvicorn, joblib, pydantic, google-earth-engine, requests, geopandas, pymongo, python-dotenv, loguru, kaggle
+
+---
+
+### 4. Minimal Working Code
+- **`src/api/main.py`**: FastAPI app with `/health` route returning `{"status": "ok"}`; include router from `src/api/routes.py`  
+- **`src/api/routes.py`**: Placeholder `/predict` POST route that accepts JSON: `N, P, K, temperature, humidity, ph, rainfall, ndvi` and returns a dummy crop  
+- **`src/api/schemas.py`**: Pydantic schema `CropInput` for the above fields  
+- **`src/preprocessing.py`**: Function `load_and_clean_data()` that loads Kaggle datasets from `data/` and does basic placeholder preprocessing  
+- **`src/model.py`**: Class `CropModel` with `train()` (trains RandomForestClassifier) and `predict()` methods; save model to `models/model.pkl`  
+- **`scripts/fetch_sentinel_data.py`**: Authenticate Earth Engine, fetch NDVI for a sample region, save as `data/sentinel_ndvi.csv`  
+- **`scripts/retrain_model.py`**: Calls preprocessing, optionally fetch Sentinel data, trains the model, and saves to `models/model.pkl`  
+- **`tests/test_api.py` and `tests/test_model.py`**: Skeleton unit tests for API and model  
+
+---
+
+### 5. Kaggle Dataset Download
+- Include helper code to download Kaggle datasets into `data/` programmatically using `kaggle` API
+
+---
+
+### 6. Makefile
+- Targets:
+install:
+pip install -r requirements.txt
+
+run:
+uvicorn src.api.main:app --reload --port 8000
+
+train:
+python scripts/retrain_model.py
+
+yaml
+Copy code
+
+---
+
+### 7. README.md
+- Project Name: Crop Recommendation Backend  
+- Description: Predict suitable crops using Kaggle datasets + Sentinel data  
+- Datasets: Include all three links  
+- Quick Start Instructions:
+1. `python -m venv venv && source venv/bin/activate`  
+2. `pip install -r requirements.txt`  
+3. Download Kaggle datasets  
+4. `python scripts/retrain_model.py` to train model  
+5. `uvicorn src.api.main:app --reload` to run API  
+
+---
+
+### 8. Output Instructions
+- Generate **full directory tree**  
+- Generate **contents of all files** with minimal runnable code or placeholder comments  
+- FastAPI app should start without errors  
+- Include code for Kaggle dataset download and Sentinel fetch stub  
+- Do **not** include Docker or extra explanations

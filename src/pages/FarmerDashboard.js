@@ -6,8 +6,6 @@ import {
   PieChart,
   Pie,
   Cell,
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -16,6 +14,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import mongoService from '../services/mongoService';
+import { fertilizerRecommendations } from '../data/mockData';
 
 /**
  * Professional Farmer Dashboard with comprehensive farming insights

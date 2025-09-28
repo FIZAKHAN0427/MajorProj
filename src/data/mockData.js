@@ -80,7 +80,7 @@ export const weatherData = {
   forecast: [
     { day: 'आज', temp: 28, condition: 'Partly Cloudy', icon: '⛅' },
     { day: 'कल', temp: 30, condition: 'Sunny', icon: '☀️' },
-    { day: 'परसों', day: 26, condition: 'Rainy', icon: '🌧️' },
+    { day: 'परसों', temp: 26, condition: 'Rainy', icon: '🌧️' },
     { day: 'शुक्रवार', temp: 29, condition: 'Cloudy', icon: '☁️' },
     { day: 'शनिवार', temp: 31, condition: 'Hot', icon: '🌡️' }
   ]
