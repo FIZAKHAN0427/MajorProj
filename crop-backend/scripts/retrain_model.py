@@ -8,8 +8,9 @@ import argparse
 from pathlib import Path
 from loguru import logger
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent.parent / "src"))
+# Add project root to path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
 
 from src.model import CropModel
 from src.utils import setup_logging, download_crop_datasets

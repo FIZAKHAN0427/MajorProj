@@ -115,8 +115,9 @@ class CropModel:
                 else:
                     input_df[feature] = 0
         
-        # Select and order features correctly
-        input_features = input_df[self.feature_columns]
+        # Select only the features that were used during training
+        available_features = [col for col in self.feature_columns if col in input_df.columns]
+        input_features = input_df[available_features]
         
         # Make prediction
         prediction_encoded = self.model.predict(input_features)
