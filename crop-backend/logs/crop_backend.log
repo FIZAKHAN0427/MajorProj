@@ -1,0 +1,263 @@
+2025-09-28 20:39:57 | INFO     | src.utils:setup_logging:148 - Logging setup completed
+2025-09-28 20:39:57 | INFO     | src.api.main:lifespan:20 - Starting Crop Recommendation API
+2025-09-28 20:39:57 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/data
+2025-09-28 20:39:57 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/models
+2025-09-28 20:39:57 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/logs
+2025-09-28 20:39:57 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/notebooks
+2025-09-28 20:39:57 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/tests
+2025-09-28 20:40:40 | INFO     | src.utils:setup_logging:148 - Logging setup completed
+2025-09-28 20:40:40 | INFO     | __main__:main:31 - Starting model retraining
+2025-09-28 20:40:40 | INFO     | __main__:main:52 - Initializing crop model
+2025-09-28 20:40:40 | INFO     | __main__:main:56 - Starting model training...
+2025-09-28 20:40:40 | INFO     | src.model:train:22 - Starting model training
+2025-09-28 20:40:40 | INFO     | src.preprocessing:load_and_clean_data:9 - Loading and cleaning crop recommendation data
+2025-09-28 20:40:40 | WARNING  | src.preprocessing:load_and_clean_data:19 - Crop recommendation dataset not found, creating sample data
+2025-09-28 20:40:40 | INFO     | src.preprocessing:create_sample_data:68 - Creating sample crop recommendation data
+2025-09-28 20:40:40 | INFO     | src.preprocessing:clean_data:46 - Cleaning dataset
+2025-09-28 20:40:40 | INFO     | src.preprocessing:clean_data:51 - Removed 0 duplicate rows
+2025-09-28 20:40:40 | INFO     | src.preprocessing:load_and_clean_data:41 - Final processed dataset has 1000 rows and 8 columns
+2025-09-28 20:40:40 | INFO     | src.preprocessing:prepare_features_target:107 - Preparing features and target variables
+2025-09-28 20:40:40 | INFO     | src.preprocessing:prepare_features_target:119 - Features: ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
+2025-09-28 20:40:40 | INFO     | src.preprocessing:prepare_features_target:120 - Target classes: ['sugarcane', 'apple', 'jute', 'papaya', 'corn', 'orange', 'rice', 'cotton', 'coconut', 'wheat']
+2025-09-28 20:40:40 | INFO     | src.model:train:36 - Training set size: 800
+2025-09-28 20:40:40 | INFO     | src.model:train:37 - Test set size: 200
+2025-09-28 20:40:40 | INFO     | src.model:train:54 - Training accuracy: 1.0000
+2025-09-28 20:40:40 | INFO     | src.model:train:55 - Test accuracy: 0.1500
+2025-09-28 20:40:41 | INFO     | src.model:train:59 - Cross-validation scores: [0.1   0.105 0.08  0.11  0.08 ]
+2025-09-28 20:40:41 | INFO     | src.model:train:60 - Mean CV score: 0.0950 (+/- 0.0253)
+2025-09-28 20:40:41 | INFO     | src.model:train:69 - Classification Report:
+2025-09-28 20:40:41 | INFO     | src.model:train:70 - 
+              precision    recall  f1-score   support
+
+       apple       0.14      0.18      0.16        22
+     coconut       0.13      0.14      0.14        21
+        corn       0.13      0.12      0.13        16
+      cotton       0.18      0.19      0.19        21
+        jute       0.27      0.20      0.23        20
+      orange       0.10      0.09      0.09        22
+      papaya       0.10      0.11      0.10        19
+        rice       0.20      0.30      0.24        23
+   sugarcane       0.10      0.06      0.07        17
+       wheat       0.09      0.05      0.07        19
+
+    accuracy                           0.15       200
+   macro avg       0.14      0.15      0.14       200
+weighted avg       0.15      0.15      0.14       200
+
+2025-09-28 20:40:41 | INFO     | src.model:train:78 - Feature Importance:
+2025-09-28 20:40:41 | INFO     | src.model:train:79 - 
+       feature  importance
+3  temperature    0.149948
+6     rainfall    0.148788
+4     humidity    0.147842
+5           ph    0.143117
+2            K    0.140423
+1            P    0.135251
+0            N    0.134631
+2025-09-28 20:40:41 | INFO     | src.model:save_model:169 - Model saved to models/model.pkl
+2025-09-28 20:40:41 | INFO     | __main__:main:63 - Training completed successfully!
+2025-09-28 20:40:41 | INFO     | __main__:main:64 - Training Results:
+2025-09-28 20:40:41 | INFO     | __main__:main:65 -   Training Accuracy: 1.0000
+2025-09-28 20:40:41 | INFO     | __main__:main:66 -   Test Accuracy: 0.1500
+2025-09-28 20:40:41 | INFO     | __main__:main:67 -   Cross-validation Mean: 0.0950
+2025-09-28 20:40:41 | INFO     | __main__:main:68 -   Cross-validation Std: 0.0126
+2025-09-28 20:40:41 | INFO     | __main__:main:70 - Feature Importance:
+2025-09-28 20:40:41 | INFO     | __main__:main:72 -   temperature: 0.1499
+2025-09-28 20:40:41 | INFO     | __main__:main:72 -   rainfall: 0.1488
+2025-09-28 20:40:41 | INFO     | __main__:main:72 -   humidity: 0.1478
+2025-09-28 20:40:41 | INFO     | __main__:main:72 -   ph: 0.1431
+2025-09-28 20:40:41 | INFO     | __main__:main:72 -   K: 0.1404
+2025-09-28 20:40:41 | INFO     | __main__:main:75 - Testing model with sample prediction...
+2025-09-28 20:40:41 | ERROR    | __main__:main:88 - Training failed: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- ndvi
+
+2025-09-28 20:40:41 | ERROR    | __main__:main:90 - Traceback: Traceback (most recent call last):
+  File "/home/runner/workspace/crop-backend/scripts/retrain_model.py", line 82, in main
+    prediction = model.predict(sample_data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/crop-backend/src/model.py", line 122, in predict
+    prediction_encoded = self.model.predict(input_features)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 823, in predict
+    proba = self.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 865, in predict_proba
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 599, in _validate_X_predict
+    X = self._validate_data(X, dtype=DTYPE, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/base.py", line 579, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/base.py", line 506, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- ndvi
+
+
+2025-09-28 20:41:25 | INFO     | src.utils:setup_logging:148 - Logging setup completed
+2025-09-28 20:41:25 | INFO     | src.api.main:lifespan:20 - Starting Crop Recommendation API
+2025-09-28 20:41:25 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/data
+2025-09-28 20:41:25 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/models
+2025-09-28 20:41:25 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/logs
+2025-09-28 20:41:25 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/notebooks
+2025-09-28 20:41:25 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/tests
+2025-09-28 20:41:56 | INFO     | src.utils:setup_logging:148 - Logging setup completed
+2025-09-28 20:41:56 | INFO     | src.api.main:lifespan:20 - Starting Crop Recommendation API
+2025-09-28 20:41:56 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/data
+2025-09-28 20:41:56 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/models
+2025-09-28 20:41:56 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/logs
+2025-09-28 20:41:56 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/notebooks
+2025-09-28 20:41:56 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/tests
+2025-09-28 20:42:26 | ERROR    | src.database:connect:21 - Failed to connect to MongoDB: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68d99d94a21df42d27d10de4, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-28 20:42:26 | INFO     | src.api.main:lifespan:32 - API startup completed
+2025-09-28 20:43:07 | INFO     | src.api.routes:predict_crop:20 - Received prediction request: {'N': 90.0, 'P': 42.0, 'K': 43.0, 'temperature': 20.87, 'humidity': 82.0, 'ph': 6.5, 'rainfall': 202.93, 'ndvi': None}
+2025-09-28 20:43:07 | ERROR    | src.api.routes:predict_crop:70 - Prediction error: '<' not supported between instances of 'NoneType' and 'int'
+2025-09-28 20:43:07 | ERROR    | src.api.routes:predict_crop:71 - Traceback: Traceback (most recent call last):
+  File "/home/runner/workspace/crop-backend/src/api/routes.py", line 23, in predict_crop
+    validation_errors = validate_input_data(input_data.dict())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/crop-backend/src/utils.py", line 117, in validate_input_data
+    if 'ndvi' in data and (data['ndvi'] < -1 or data['ndvi'] > 1):
+                           ^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+2025-09-28 20:43:50 | INFO     | src.api.main:lifespan:37 - Shutting down Crop Recommendation API
+2025-09-28 20:43:50 | INFO     | src.database:disconnect:28 - Disconnected from MongoDB
+2025-09-28 20:43:50 | INFO     | src.api.main:lifespan:43 - API shutdown completed
+2025-09-28 20:43:53 | INFO     | src.utils:setup_logging:148 - Logging setup completed
+2025-09-28 20:43:53 | INFO     | src.api.main:lifespan:20 - Starting Crop Recommendation API
+2025-09-28 20:43:53 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/data
+2025-09-28 20:43:53 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/models
+2025-09-28 20:43:53 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/logs
+2025-09-28 20:43:53 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/notebooks
+2025-09-28 20:43:53 | INFO     | src.utils:create_directory_structure:208 - Created directory: /home/runner/workspace/crop-backend/tests
+2025-09-28 20:44:23 | ERROR    | src.database:connect:21 - Failed to connect to MongoDB: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68d99e09c268f1684a2f45ca, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-28 20:44:23 | INFO     | src.api.main:lifespan:32 - API startup completed
+2025-09-28 20:44:23 | INFO     | src.api.routes:predict_crop:20 - Received prediction request: {'N': 90.0, 'P': 42.0, 'K': 43.0, 'temperature': 20.87, 'humidity': 82.0, 'ph': 6.5, 'rainfall': 202.93, 'ndvi': None}
+2025-09-28 20:44:23 | INFO     | src.model:load_model:183 - Model loaded from models/model.pkl
+2025-09-28 20:44:23 | ERROR    | src.api.routes:predict_crop:70 - Prediction error: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- ndvi
+
+2025-09-28 20:44:23 | ERROR    | src.api.routes:predict_crop:71 - Traceback: Traceback (most recent call last):
+  File "/home/runner/workspace/crop-backend/src/api/routes.py", line 29, in predict_crop
+    prediction_result = model.predict(input_data.dict())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/crop-backend/src/model.py", line 123, in predict
+    prediction_encoded = self.model.predict(input_features)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 823, in predict
+    proba = self.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 865, in predict_proba
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/ensemble/_forest.py", line 599, in _validate_X_predict
+    X = self._validate_data(X, dtype=DTYPE, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/base.py", line 579, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/sklearn/base.py", line 506, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- ndvi
+
+
+2025-09-29 12:29:24 | INFO     | src.utils:setup_logging:148 - Logging setup completed
+2025-09-29 12:29:24 | INFO     | __main__:main:31 - Starting model retraining
+2025-09-29 12:29:24 | WARNING  | __main__:main:36 - Model already exists at models\model.pkl
+2025-09-29 12:29:24 | INFO     | __main__:main:37 - Use --force flag to retrain anyway
+2025-09-29 12:29:30 | INFO     | __main__:main:52 - Initializing crop model
+2025-09-29 12:29:30 | INFO     | __main__:main:56 - Starting model training...
+2025-09-29 12:29:30 | INFO     | src.model:train:22 - Starting model training
+2025-09-29 12:29:30 | INFO     | src.preprocessing:load_and_clean_data:9 - Loading and cleaning crop recommendation data
+2025-09-29 12:29:30 | WARNING  | src.preprocessing:load_and_clean_data:19 - Crop recommendation dataset not found, creating sample data
+2025-09-29 12:29:30 | INFO     | src.preprocessing:create_sample_data:68 - Creating sample crop recommendation data
+2025-09-29 12:29:30 | INFO     | src.preprocessing:clean_data:46 - Cleaning dataset
+2025-09-29 12:29:30 | INFO     | src.preprocessing:clean_data:51 - Removed 0 duplicate rows
+2025-09-29 12:29:30 | INFO     | src.preprocessing:load_and_clean_data:41 - Final processed dataset has 1000 rows and 8 columns
+2025-09-29 12:29:30 | INFO     | src.preprocessing:prepare_features_target:107 - Preparing features and target variables
+2025-09-29 12:29:30 | INFO     | src.preprocessing:prepare_features_target:119 - Features: ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
+2025-09-29 12:29:30 | INFO     | src.preprocessing:prepare_features_target:120 - Target classes: ['sugarcane', 'apple', 'jute', 'papaya', 'corn', 'orange', 'rice', 'cotton', 'coconut', 'wheat']
+2025-09-29 12:29:30 | INFO     | src.model:train:36 - Training set size: 800
+2025-09-29 12:29:30 | INFO     | src.model:train:37 - Test set size: 200
+2025-09-29 12:29:30 | INFO     | src.model:train:54 - Training accuracy: 1.0000
+2025-09-29 12:29:30 | INFO     | src.model:train:55 - Test accuracy: 0.1500
+2025-09-29 12:29:32 | INFO     | src.model:train:59 - Cross-validation scores: [0.1   0.105 0.08  0.11  0.08 ]
+2025-09-29 12:29:32 | INFO     | src.model:train:60 - Mean CV score: 0.0950 (+/- 0.0253)
+2025-09-29 12:29:32 | INFO     | src.model:train:69 - Classification Report:
+2025-09-29 12:29:32 | INFO     | src.model:train:70 - 
+              precision    recall  f1-score   support
+
+       apple       0.14      0.18      0.16        22
+     coconut       0.13      0.14      0.14        21
+        corn       0.13      0.12      0.13        16
+      cotton       0.18      0.19      0.19        21
+        jute       0.27      0.20      0.23        20
+      orange       0.10      0.09      0.09        22
+      papaya       0.10      0.11      0.10        19
+        rice       0.20      0.30      0.24        23
+   sugarcane       0.10      0.06      0.07        17
+       wheat       0.09      0.05      0.07        19
+
+    accuracy                           0.15       200
+   macro avg       0.14      0.15      0.14       200
+weighted avg       0.15      0.15      0.14       200
+
+2025-09-29 12:29:32 | INFO     | src.model:train:78 - Feature Importance:
+2025-09-29 12:29:32 | INFO     | src.model:train:79 - 
+       feature  importance
+3  temperature    0.149948
+6     rainfall    0.148788
+4     humidity    0.147842
+5           ph    0.143117
+2            K    0.140423
+1            P    0.135251
+0            N    0.134631
+2025-09-29 12:29:32 | INFO     | src.model:save_model:170 - Model saved to models\model.pkl
+2025-09-29 12:29:32 | INFO     | __main__:main:63 - Training completed successfully!
+2025-09-29 12:29:32 | INFO     | __main__:main:64 - Training Results:
+2025-09-29 12:29:32 | INFO     | __main__:main:65 -   Training Accuracy: 1.0000
+2025-09-29 12:29:32 | INFO     | __main__:main:66 -   Test Accuracy: 0.1500
+2025-09-29 12:29:32 | INFO     | __main__:main:67 -   Cross-validation Mean: 0.0950
+2025-09-29 12:29:32 | INFO     | __main__:main:68 -   Cross-validation Std: 0.0126
+2025-09-29 12:29:32 | INFO     | __main__:main:70 - Feature Importance:
+2025-09-29 12:29:32 | INFO     | __main__:main:72 -   temperature: 0.1499
+2025-09-29 12:29:32 | INFO     | __main__:main:72 -   rainfall: 0.1488
+2025-09-29 12:29:32 | INFO     | __main__:main:72 -   humidity: 0.1478
+2025-09-29 12:29:32 | INFO     | __main__:main:72 -   ph: 0.1431
+2025-09-29 12:29:32 | INFO     | __main__:main:72 -   K: 0.1404
+2025-09-29 12:29:32 | INFO     | __main__:main:75 - Testing model with sample prediction...
+2025-09-29 12:29:32 | ERROR    | __main__:main:88 - Training failed: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- ndvi
+
+2025-09-29 12:29:32 | ERROR    | __main__:main:90 - Traceback: Traceback (most recent call last):
+  File "C:\Users\FIZA\OneDrive\Desktop\repp\MajorProj\crop-backend\scripts\retrain_model.py", line 82, in main
+    prediction = model.predict(sample_data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FIZA\OneDrive\Desktop\repp\MajorProj\crop-backend\src\model.py", line 123, in predict
+    prediction_encoded = self.model.predict(input_features)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FIZA\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\ensemble\_forest.py", line 823, in predict
+    proba = self.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FIZA\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\ensemble\_forest.py", line 865, in predict_proba
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FIZA\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\ensemble\_forest.py", line 599, in _validate_X_predict
+    X = self._validate_data(X, dtype=DTYPE, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FIZA\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py", line 580, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "C:\Users\FIZA\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\base.py", line 507, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- ndvi
+
+
